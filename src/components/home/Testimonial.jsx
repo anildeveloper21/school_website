@@ -74,7 +74,7 @@ const STATS = [
   { label: "Rating", target: "4.9", suffix: "/5", isFloat: true },
   { label: "Students", target: "1500", suffix: "+" },
   { label: "Experience", target: "25", suffix: "+" },
-  { label: "Satisfaction", target: "95", suffix: "%" }
+  { label: "Satisfaction", target: "99", suffix: "%" }
 ]
 
 export function Testimonials() {
