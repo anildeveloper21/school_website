@@ -73,7 +73,7 @@ function CounterStat({ label, target, suffix, prefix = "", isFloat = false }) {
 const STATS = [
   { label: "Rating", target: "4.9", suffix: "/5", isFloat: true },
   { label: "Students", target: "1500", suffix: "+" },
-  { label: "Experience", target: "25 Y", suffix: "+" },
+  { label: "Experience", target: "25", suffix: " Y+" },
   { label: "Satisfaction", target: "99", suffix: "%" }
 ]
 
