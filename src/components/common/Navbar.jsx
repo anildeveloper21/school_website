@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Menu, X, Home, Info, Image, Phone, User } from "lucide-react";
+import { Menu, X, Home, Info, Image, Phone, User, GraduationCap } from "lucide-react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -15,6 +15,7 @@ export default function Navbar() {
     { name: "Home", path: "/", icon: Home },
     { name: "Admission", path: "/admission", icon: User },
     { name: "About", path: "/about", icon: Info },
+    { name: "Result", path: "/result", icon: GraduationCap },
     { name: "Director", path: "/director", icon: User },
     { name: "Gallery", path: "/gallery", icon: Image },
     { name: "Contact", path: "/contact", icon: Phone },
