@@ -1,7 +1,16 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Menu, X, Home, Info, Image, Phone, User, GraduationCap } from "lucide-react";
+import {
+  Menu,
+  X,
+  Home,
+  Info,
+  Image,
+  Phone,
+  User,
+  GraduationCap,
+} from "lucide-react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -31,51 +40,47 @@ export default function Navbar() {
 
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <div className="w-12 h-12 bg-blue-600 rounded-full">
-            <img className="overflow-hidden rounded-full" src="/icon.jpeg" alt="" />
+          <div className="w-12 h-12 rounded-full overflow-hidden">
+            <img src="/icon.jpeg" alt="logo" />
           </div>
           <h1 className="font-bold text-lg md:text-xl text-gray-800">
             Adarsh Vidya Mandir
           </h1>
         </div>
 
-        {/* Desktop Menu */}
+        {/* ✅ Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
           {navItems.map((item, i) => {
-            const Icon = item.icon;
             const isResult = item.name === "Result";
 
             return (
               <div key={i} className="relative">
-
                 <NavLink to={item.path} className={linkClass}>
                   {item.name}
                 </NavLink>
 
-                {/* 🔴 NEW Badge only for Result */}
+                {/* 🔴 NEW Badge */}
                 {isResult && (
                   <span className="absolute -top-2 -right-4 bg-red-500 text-white text-[10px] px-1.5 py-[2px] rounded-full animate-pulse shadow">
                     NEW
                   </span>
                 )}
-
               </div>
             );
           })}
-
 
           <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
             Apply Now
           </button>
         </div>
 
-        {/* Mobile Button */}
+        {/* 📱 Mobile Button */}
         <button onClick={() => setOpen(!open)} className="md:hidden">
           {open ? <X /> : <Menu />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* ✅ Mobile Menu */}
       {open && (
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -86,22 +91,34 @@ export default function Navbar() {
 
             {navItems.map((item, i) => {
               const Icon = item.icon;
+              const isResult = item.name === "Result";
 
               return (
-                <NavLink
-                  key={i}
-                  to={item.path}
-                  onClick={() => setOpen(false)}
-                  className={({ isActive }) =>
-                    `flex items-center gap-3 px-4 py-3 rounded-lg font-medium transition ${isActive
-                      ? "bg-blue-100 text-blue-600"
-                      : "text-gray-700 hover:bg-gray-100"
-                    }`
-                  }
-                >
-                  <Icon size={18} />
-                  {item.name}
-                </NavLink>
+                <div key={i} className="relative">
+
+                  <NavLink
+                    to={item.path}
+                    onClick={() => setOpen(false)}
+                    className={({ isActive }) =>
+                      `flex items-center gap-3 px-4 py-3 rounded-lg font-medium transition ${
+                        isActive
+                          ? "bg-blue-100 text-blue-600"
+                          : "text-gray-700 hover:bg-gray-100"
+                      }`
+                    }
+                  >
+                    <Icon size={18} />
+                    {item.name}
+                  </NavLink>
+
+                  {/* 🔴 SAME BADGE (TOP RIGHT) */}
+                  {isResult && (
+                    <span className="absolute -top-2 right-3 bg-red-500 text-white text-[10px] px-1.5 py-[2px] rounded-full animate-pulse shadow">
+                      NEW
+                    </span>
+                  )}
+
+                </div>
               );
             })}
 
