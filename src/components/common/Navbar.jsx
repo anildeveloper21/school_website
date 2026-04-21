@@ -31,7 +31,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-blue-600 rounded-full">
+          <div className="w-12 h-12 bg-blue-600 rounded-full">
             <img className="overflow-hidden rounded-full" src="/icon.jpeg" alt="" />
           </div>
           <h1 className="font-bold text-lg md:text-xl text-gray-800">

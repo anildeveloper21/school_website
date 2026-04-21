@@ -2,16 +2,19 @@ import { AnimatedItem } from "../../components/AnimatedSection"
 import { ChevronLeft, ChevronRight, Star } from "lucide-react"
 import { AnimatePresence, motion, useInView } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
+import  user1 from "../../assets/user1.jpg"
+import  user2 from "../../assets/user2.jpeg"
+import user3 from "../../assets/user3.jpeg"
 
 const TESTIMONIALS = [
   {
     id: "1",
     quote:
       "This school not only focuses on academics but also builds strong character and confidence in students.",
-    author: "Rahul Sharma",
+    author: "Yogesh Chaudhary",
     role: "Parent",
     rating: 5,
-    image: "/user1.jpg"
+    image: user1
   },
   {
     id: "2",
@@ -20,7 +23,7 @@ const TESTIMONIALS = [
     author: "Priya Verma",
     role: "Student",
     rating: 5,
-    image: "/user2.jpg"
+    image: user2
   },
   {
     id: "3",
@@ -29,7 +32,7 @@ const TESTIMONIALS = [
     author: "Amit Kumar",
     role: "Parent",
     rating: 4,
-    image: "/user3.jpg"
+    image: user3
   }
 ]
 
