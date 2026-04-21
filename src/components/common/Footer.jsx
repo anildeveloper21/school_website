@@ -14,7 +14,7 @@ export default function Footer() {
           <p className="text-gray-400">
             Near Old Power House, Kosi Kalan, Mathura
           </p>
-          <p className="text-gray-400 mt-2">📞 7579851234</p>
+          <p className="text-gray-400 mt-2">📞 9897523502</p>
         </div>
 
         {/* Quick Links */}

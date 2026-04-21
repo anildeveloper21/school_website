@@ -32,7 +32,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-blue-600 rounded-full">
-          <img className="overflow-hidden rounded-full" src="/icon.jpeg" alt="" />
+            <img className="overflow-hidden rounded-full" src="/icon.jpeg" alt="" />
           </div>
           <h1 className="font-bold text-lg md:text-xl text-gray-800">
             Adarsh Vidya Mandir
@@ -41,11 +41,28 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
-          {navItems.map((item, i) => (
-            <NavLink key={i} to={item.path} className={linkClass}>
-              {item.name}
-            </NavLink>
-          ))}
+          {navItems.map((item, i) => {
+            const Icon = item.icon;
+            const isResult = item.name === "Result";
+
+            return (
+              <div key={i} className="relative">
+
+                <NavLink to={item.path} className={linkClass}>
+                  {item.name}
+                </NavLink>
+
+                {/* 🔴 NEW Badge only for Result */}
+                {isResult && (
+                  <span className="absolute -top-2 -right-4 bg-red-500 text-white text-[10px] px-1.5 py-[2px] rounded-full animate-pulse shadow">
+                    NEW
+                  </span>
+                )}
+
+              </div>
+            );
+          })}
+
 
           <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
             Apply Now
@@ -76,10 +93,9 @@ export default function Navbar() {
                   to={item.path}
                   onClick={() => setOpen(false)}
                   className={({ isActive }) =>
-                    `flex items-center gap-3 px-4 py-3 rounded-lg font-medium transition ${
-                      isActive
-                        ? "bg-blue-100 text-blue-600"
-                        : "text-gray-700 hover:bg-gray-100"
+                    `flex items-center gap-3 px-4 py-3 rounded-lg font-medium transition ${isActive
+                      ? "bg-blue-100 text-blue-600"
+                      : "text-gray-700 hover:bg-gray-100"
                     }`
                   }
                 >

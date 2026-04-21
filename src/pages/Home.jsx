@@ -4,6 +4,7 @@ import Facilities from "../components/home/Facilities";
 import Highlights from "../components/home/Highlights";
 import { Testimonials } from "../components/home/Testimonial";
 import ContactUs from "../components/home/ContactUs";
+import AnnouncementBar from "../components/home/AnnouncementBar";
 
 export default function Home() {
   return (
@@ -58,6 +59,7 @@ export default function Home() {
 
 
       {/* OTHER SECTIONS */}
+      <AnnouncementBar />
       <AboutPreview />
       <Facilities />
       <Highlights />
