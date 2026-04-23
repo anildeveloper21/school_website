@@ -55,12 +55,38 @@ export default function Footer() {
             <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-70 blur-sm group-hover:opacity-100 transition"></div>
 
             {/* Content */}
-            <div className="relative cursor-pointer bg-gray-900 px-6 py-2 rounded-xl text-white text-sm font-medium border border-white/10">
-              Design & Developed by{" "}
-              <span className="text-blue-400 font-semibold">
-                Anil Chaudhary
-              </span>
-            </div>
+           <div className="relative inline-block p-[2px] rounded-xl overflow-hidden group">
+
+  {/* 🔥 Rotating Gradient Border */}
+  <div className="absolute inset-0 animate-spin-slow bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+
+  {/* 🟦 Inner Content */}
+  <div className="relative bg-gray-900 px-6 py-2 rounded-xl text-white text-sm font-medium border border-white/10">
+    Design & Developed by{" "}
+    <span className="text-blue-400 font-semibold">
+      Anil Chaudhary
+    </span>
+  </div>
+
+  {/* Animation */}
+  <style>
+    {`
+      .animate-spin-slow {
+        animation: spinSlow 5s linear infinite;
+      }
+
+      @keyframes spinSlow {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    `}
+  </style>
+
+</div>
 
           </div>
         </div>
