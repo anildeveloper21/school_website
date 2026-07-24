@@ -1,1 +1,39 @@
 @import "tailwindcss";
+
+/* Swiper Arrows */
+
+.swiper-button-next,
+.swiper-button-prev{
+    color:#fff !important;
+    transform: scale(.9);
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover{
+    transform: scale(1.1);
+}
+
+.swiper-pagination-bullet{
+    background:#fff !important;
+    opacity:.7;
+}
+
+.swiper-pagination-bullet-active{
+    background:#facc15 !important;
+    opacity:1;
+}
+
+/* Premium Zoom Effect */
+
+@keyframes zoomHero{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.12);
+    }
+}
+
+.animate-zoom{
+    animation:zoomHero 7s linear forwards;
+}
